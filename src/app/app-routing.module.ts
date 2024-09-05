@@ -19,6 +19,25 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'recordar-cuenta',
+    loadChildren: () => import('./recordar-cuenta/recordar-cuenta.module').then( m => m.RecordarCuentaPageModule)
+  },
+  {
+    path: 'construccion',
+    loadChildren: () => import('./construccion/construccion.module').then( m => m.ConstruccionPageModule)
+  },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
+  },  {
+    path: 'escanner',
+    loadChildren: () => import('./escanner/escanner.module').then( m => m.EscannerPageModule)
+  },
+
+
+  
+
 ];
 
 @NgModule({

@@ -1,27 +1,72 @@
-#container {
-  text-align: center;
+ion-content {
+  --background: linear-gradient(0deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.1)),
+  url('/assets/inicio.png') no-repeat center center / cover;
+}
 
-  position: absolute;
-  left: 0;
+.login-section {
+  height: 74vh;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  margin: auto;
+  border-top-right-radius: 26px;
+  border-top-left-radius: 26px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.heading {
+  margin-top: 20px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.heading h1 {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  color: #000000;
 }
 
-#container a {
-  text-decoration: none;
+.heading p {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #7b7b7b;
+}
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinea los elementos en la parte inferior */
+  align-items: center; /* Centra el ícono horizontalmente */
+}
+.icon-container {
+  display: flex;
+  justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+  padding: 130px; /* Espacio alrededor del ícono */
+}
+.bottom-icon {
+  color: #fff;
+  font-size: 42px;
+  width: 45px;
+  height: 40px;
+}
+
+.action-button {
+  display: flex;
+  justify-content: space-between; /* Alinea los botones en los extremos opuestos */
+  width: 100%; /* Asegura que la fila de botones ocupe todo el ancho disponible */
+  max-width: 600px; /* Limita el ancho máximo de la fila de botones */
+}
+
+.action-button ion-button {
+  flex: 1;
+  margin: 0 10px; /* Espaciado entre botones */
+  --box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.692); /* Sombra de botón */
+}
+
+.custom-small-button {
+  height: 50px; /* altura del botón */
+  width: 30px; /* largo del boton*/
+  font-size: 15px; /* tamaño de la fuente */
 }

@@ -1,0 +1,19 @@
+.icon-container {
+    display: flex;
+    justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+    padding: 130px; /* Espacio alrededor del ícono */
+  }
+
+  .ion-title {
+    display: flex;
+    justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+  }
+
+.bottom-icon {
+    color: #fff;
+    font-size: 42px;
+    width: 45px;
+    height: 40px;
+  }

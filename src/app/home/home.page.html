@@ -1,20 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="icon-container">
+    <ion-icon name="person" class="bottom-icon" menuToggle></ion-icon>
   </div>
+
+    <div class="login-section ion-padding">
+      <div class="heading ion-padding">
+        <h1>Bienvenido a Duoc</h1>
+        <p *ngIf="usuarioLogueado">Estudiante: {{ usuarioLogueado }}</p> <!-- mostrar usuario iniciado -->
+      </div>
+
+      <!-- Contenedor para los botones alineados horizontalmente -->
+
+      <div class="action-button ion-padding">
+        <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Horario</ion-button> <!-- sitio en construcción -->
+        <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Asistencia</ion-button> <!-- sitio en construcción -->
+      </div>
+       
+      <div class="action-button ion-padding">
+        <ion-button size="#" class="custom-small-button" [routerLink]="'/asistencia'">Asistencia QR</ion-button>
+        <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Cursos</ion-button> <!-- sitio en construcción -->
+      </div>
+    </div>
+
 </ion-content>

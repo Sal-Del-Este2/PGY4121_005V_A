@@ -2,33 +2,37 @@
   <div class="login-section ion-padding">
     <div class="heading ion-padding">
       <h1>Bienvenido a Duoc</h1>
-      <p>ingrese para continuar</p>
+      <p>Ingrese sus datos para continuar</p>
     </div>
 
-    <div class="login-form ion-padding">
+    <form class="login-form ion-padding">
       <div class="form-input">
         <ion-icon name="mail-outline"></ion-icon>
-        <ion-item><!-- usuario -->
+        <ion-item>
           <ion-label position="floating">Correo</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input type="email" aria-label="Correo" name="correo" [(ngModel)]="user.correo"></ion-input> <!-- Añadido el atributo name -->
         </ion-item>
       </div>
       <br>
       <div class="form-input">
         <ion-icon name="lock-closed-outline"></ion-icon>
-        <ion-item><!-- contraseña -->
+        <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input type="password" aria-label="Contraseña" name="password" [(ngModel)]="user.password"></ion-input> <!-- Añadido el atributo name -->
         </ion-item>
       </div>
-    </div>
+          <!-- Mostrar mensaje de error si errorMessage tiene un valor -->
+      <div *ngIf="errorMessage" class="error-message">
+        <p>{{ errorMessage }}</p>
+      </div>
+    </form>
+
     <div class="action-button ion-padding">
-      <ion-button size="large" class="login-button">Ingresar</ion-button>
+      <ion-button size="large" class="login-button" (click)="login()">Ingresar</ion-button>
       <br>
-      <p>recordar contraseña</p>
-      <br>
-      <ion-button class="signup-button" size="large" fill="outline" routerLink="/registro">registro</ion-button>
+      <p>
+        <ion-button fill="clear" size="small" [routerLink]="'/recordar-cuenta'">¿Olvidó su contraseña?</ion-button>
+      </p>
     </div>
   </div>
-  
 </ion-content>
