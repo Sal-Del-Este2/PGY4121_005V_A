@@ -10,6 +10,7 @@
       <ion-title size="large">Sitio en construcción</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <div class="icon-container">
     <ion-icon name="play-back-outline" class="bottom-icon" (click)="navigateHome()"></ion-icon>
   </div>
@@ -17,5 +18,16 @@
   
   <div class="ion-title">
     <h3>Sitio aún en construcción</h3>
+  </div>
+  
+  <div class="imagenes">
+    <div class="ion-gift">
+      <ion-img alt="Minero gift" src="assets/Minero.gif"></ion-img>
+    </div>
+    <div class="ion-ladrillos">
+      <div *ngFor="let ladrillo of ladrillos" class="ion-ladrillo">
+        <ion-img alt="muralla de ladrillo" [src]="ladrillo.src"></ion-img>
+      </div>
+    </div>
   </div>
 </ion-content>

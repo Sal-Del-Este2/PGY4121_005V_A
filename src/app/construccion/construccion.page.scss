@@ -1,19 +1,48 @@
 .icon-container {
-    display: flex;
-    justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
-    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-    padding: 130px; /* Espacio alrededor del ícono */
-  }
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 130px;
+}
 
-  .ion-title {
-    display: flex;
-    justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
-    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-  }
+.ion-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .bottom-icon {
-    color: #7c7a7a;
-    font-size: 42px;
-    width: 45px;
-    height: 40px;
-  }
+  color: #7c7a7a;
+  font-size: 42px;
+  width: 45px;
+  height: 40px;
+}
+
+.imagenes {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 30vh;
+}
+
+.ion-gift {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: left 2s ease;
+}
+
+.ion-ladrillos {
+  display: flex;
+  position: relative;
+}
+
+.ion-ladrillo {
+  width: 100px;
+  height: auto;
+  margin-right: 5px;
+  transition: opacity 0.5s ease;
+}

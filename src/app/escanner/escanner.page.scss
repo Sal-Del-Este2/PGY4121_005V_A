@@ -1,19 +1,50 @@
 .icon-container {
-    display: flex;
-    justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
-    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-    padding: 130px; /* Espacio alrededor del ícono */
-  }
+  display: flex;
+  justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+  padding: 130px; /* Espacio alrededor del ícono */
+}
 
-  .ion-title {
-    display: flex;
-    justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
-    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-  }
+.ion-title {
+  display: flex;
+  justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+}
 
 .bottom-icon {
-    color: #fff;
-    font-size: 42px;
-    width: 45px;
-    height: 40px;
+  color: #fff;
+  font-size: 42px;
+  width: 45px;
+  height: 40px;
+}
+
+
+//animacion
+
+ion-card {
+  position: relative;
+  overflow: hidden; /* Asegura que la barra no se desborde del card */
+  height: 200px; /* Ajusta la altura del card si es necesario */
+}
+
+.barra {
+  position: absolute; /* Posiciona la barra dentro del ion-card */
+  width: 100%; /* Ancho completo del ion-card */
+  height: 5px; /* Altura de la barra */
+  background-color: #b9b9b9; /* Color plomo de la barra (gris oscuro) */
+  top: 0; /* Comienza en la parte superior del ion-card */
+  left: 0; /* Comienza en la parte izquierda del ion-card */
+  animation: moverBarra 1s linear infinite; /* Aplica la animación */
+}
+
+@keyframes moverBarra {
+  0% {
+    transform: translateY(0); /* Comienza en la parte superior */
   }
+  50% {
+    transform: translateY(calc(100% - 10px)); /* Baja hasta la parte inferior */
+  }
+  100% {
+    transform: translateY(0); /* Regresa a la parte superior */
+  }
+}
