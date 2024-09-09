@@ -1,22 +1,21 @@
+// estilo contenido principal
 ion-content {
     --background: linear-gradient(0deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.1)),
     url('/assets/inicio.png') no-repeat center center / cover;
 }
-
+// estilo seccion donde estara el contenido
 .login-section {
     height: 74vh;
     width: 100%;
     max-width: 500px;
     background: #fff;
-    right: 0;
-    left: 0;
     bottom: 0;
     position: fixed;
     margin: auto;
     border-top-right-radius: 26px;
     border-top-left-radius: 26px;
 }
-
+// Estilos para el encabezado
 .heading {
     margin-top: 2px;
     text-align: center;
@@ -33,7 +32,7 @@ ion-content {
     font-size: 1rem;
     color: #7b7b7b;
 }
-
+// Estilos para los campos del formulario
 .login-form .form-input {
     position: relative;
     margin-bottom: 10px;
@@ -63,19 +62,19 @@ ion-content {
     font-size: 0.9rem;
     --padding-start: 36px;
     --padding-top: 36px;
-    color: #7b7b7b;
+    color: #5f5f5f;
 }
-
+// Estilos para el botón: altura, largo, tamaño letra
 .custom-small-button {
-    height: 20px; /* altura del botón */
-    width: 90px; /* largo del boton*/
-    font-size: 12px; /* tamaño de la fuente */
+    height: 20px;
+    width: 90px;
+    font-size: 12px; 
 }
-
+// Estilos para los botones de acciones
 .action-button {
     text-align: center;
 }
-
+// Estilos para el mensaje de error
 .action-button .login-button {
     background: #f9b70100;
     width: 100%;
@@ -95,9 +94,12 @@ ion-content {
     margin-top: 100%;
     width: 100%;
 }
+
+// estilo del mensaje de error
 .error-message {
     color: red;
     font-weight: bold;
     margin-top: 5px;
     text-align: center;
+    font-size: 12px;
   }

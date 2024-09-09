@@ -1,27 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="ion-title">Sitio en construcción</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" id="main-content">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar class="ion-title">
-      <ion-title size="large">Sitio en construcción</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <div class="icon-container">
-    <ion-icon name="play-back-outline" class="bottom-icon" (click)="navigateHome()"></ion-icon>
+    <br>
   </div>
   <br>
   <div>
-    <ion-card >
+    <ion-card>
+      <div class="barra"></div> <!-- Barra horizontal animada dentro del ion-card -->
+      <ion-card-header>
+        <ion-card-title></ion-card-title>
+        <ion-card-subtitle></ion-card-subtitle>
+      </ion-card-header>
       <ion-card-content>
-        <div class="barra"></div>
       </ion-card-content>
     </ion-card>
   </div>
-  <div class="ion-title">
-    <ion-button (click)="presentAlert()">Escanear QR</ion-button>
+  <div class="ion-boton">
+    <ion-button (click)="presentAlert()">Escanear QR</ion-button> <!-- boton para mostrar alerta de escaneo de QR -->
+  </div>
+  <br>
+  <div class="icon-container">
+    <ion-icon name="play-back-outline" class="bottom-icon" (click)="navigateHome()"></ion-icon> <!--icono para regresa a asistencia -->
   </div>
 </ion-content>

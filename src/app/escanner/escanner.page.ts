@@ -12,18 +12,18 @@ export class EscannerPage {
     private router: Router,
     private alertController: AlertController
   ) {}
-
+// alesta con mensaje
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Escaner de QR',
-      subHeader: 'Estoescanea',
-      message: 'muestre un QR',
-      buttons: ['Action'],
+      subHeader: 'Esto escaneara',
+      message: 'debe acercar un QR',
+      buttons: ['escanear'],
     });
 
     await alert.present();
   }
-
+//retorno a la pagina anterior
   navigateHome() {
     this.router.navigate(['/asistencia']);
   }

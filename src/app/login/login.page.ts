@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AnimationController } from '@ionic/angular'; // Importa AnimationController
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,10 @@ export class LoginPage {
     { correo: 'pr@duoc.cl', password: 'pr123' }
   ];
 
-  constructor(private router: Router, private animationCtrl: AnimationController) {} // Inyecta AnimationController
+  constructor(
+    private router: Router,
+    private animationCtrl: AnimationController
+  ) {}
 
   // Función para animar el botón
   vibrateButton() {
@@ -29,8 +32,8 @@ export class LoginPage {
   
     if (buttonElement) {
       const animation = this.animationCtrl.create()
-        .addElement(buttonElement) // Solo si buttonElement no es null
-        .duration(2000) // Duración de la animación: 5 segundos
+        .addElement(buttonElement) // selecciona el botón para animar
+        .duration(2000) // Duración de la animación: 2 segundos
         .keyframes([
           { offset: 0, transform: 'translateX(0)' },
           { offset: 0.1, transform: 'translateX(-5px)' },
@@ -50,12 +53,12 @@ export class LoginPage {
       console.error('No se encontró el botón con la clase .login-button');
     }
   }
-
+  // Función de inicio de sesión
   login() {
-    console.log('Correo ingresado:', this.user.correo); // Log para verificar el correo
-    console.log('Contraseña ingresada:', this.user.password); // Log para verificar la contraseña
+    console.log('Correo ingresado:', this.user.correo); // verificar el correo
+    console.log('Contraseña ingresada:', this.user.password); // verificar la contraseña
 
-    // Verifica si las credenciales coinciden con alguno de los usuarios en la lista
+    // Verifica si las credenciales coinciden con alguno de los usuarios en la lista de usuarios validos
     const usuarioValido = this.usuariosValidos.some(
       usuario => usuario.correo === this.user.correo && usuario.password === this.user.password
     );
@@ -70,7 +73,7 @@ export class LoginPage {
       this.errorMessage = 'Usuario o contraseña incorrecta';
       console.log('Error en autenticación');
 
-      this.vibrateButton(); // Llama a la función de vibración si la autenticación falla
+      this.vibrateButton(); // Llama a la función de vibración si falla la autenticación
     }
   } 
 }

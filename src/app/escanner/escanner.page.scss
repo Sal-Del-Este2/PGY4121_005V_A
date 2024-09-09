@@ -1,17 +1,39 @@
+ion-content {
+  --background: linear-gradient(0deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.1)),
+  url('/assets/inicio.png') no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; // elementos alineados en la parte inferior
+  align-items: center; // Centrar horizontalmente
+}
+
+// estilo seccion donde estara el contenido
+.home-section {
+  height: 74vh;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  border-top-right-radius: 26px;
+  border-top-left-radius: 26px;
+}
+
 .icon-container {
   display: flex;
-  justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
-  width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-  padding: 130px; /* Espacio alrededor del ícono */
+  justify-content: center; // Centrar horizontal dentro del contenedor
+  width: 100%; // el contenedor ocupe el ancho completo
+  padding: 50px; // espacio alrededor del ícono
 }
-
-.ion-title {
+// estilo del boton
+.ion-boton {
   display: flex;
-  justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
-  width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+  justify-content: center; // Centrar horizontal dentro del contenedor
+  width: 100%; // Asegura que el contenedor ocupe el ancho completo
 }
 
-.bottom-icon {
+.bottom-icon { //icono: color, tamaño, ancho y alto
   color: #fff;
   font-size: 42px;
   width: 45px;
@@ -23,28 +45,26 @@
 
 ion-card {
   position: relative;
-  overflow: hidden; /* Asegura que la barra no se desborde del card */
-  height: 200px; /* Ajusta la altura del card si es necesario */
+  overflow: hidden; // la barra no se salga del ion-card
+  height: 300px; // altura del card
 }
 
-.barra {
-  position: absolute; /* Posiciona la barra dentro del ion-card */
-  width: 100%; /* Ancho completo del ion-card */
-  height: 5px; /* Altura de la barra */
-  background-color: #b9b9b9; /* Color plomo de la barra (gris oscuro) */
-  top: 0; /* Comienza en la parte superior del ion-card */
-  left: 0; /* Comienza en la parte izquierda del ion-card */
-  animation: moverBarra 1s linear infinite; /* Aplica la animación */
+.barra { //para la barraen el ion-card
+  position: absolute; // dentro
+  width: 100%; // Ancho 
+  height: 5px; // Altura
+  background-color: #b9b9b9; // color
+  top: 0; // inicia arriba
+  left: 0; // inicia en la izquierda
+  animation: moverBarra 5s linear infinite; // animacion
 }
 
+// movimiento animacion
 @keyframes moverBarra {
   0% {
-    transform: translateY(0); /* Comienza en la parte superior */
+    transform: translateY(0); // inica en la parte superior
   }
   50% {
-    transform: translateY(calc(100% - 10px)); /* Baja hasta la parte inferior */
-  }
-  100% {
-    transform: translateY(0); /* Regresa a la parte superior */
+    transform: translateY(calc(36vh - 5px)); //baja hasta el extremo inferior
   }
 }

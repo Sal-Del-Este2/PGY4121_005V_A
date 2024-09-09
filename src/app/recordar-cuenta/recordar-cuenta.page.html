@@ -3,29 +3,30 @@
     <div class="heading ion-padding">
       <!-- Botón de regreso con ícono y texto -->
       <div class="back-button">
-        <!-- <ion-icon name="chevron-back-outline"></ion-icon>-->
         <ion-buttons>
-          <ion-back-button text="" defaultHref="/login"></ion-back-button>
-          <h1>Recordar contraseña</h1>
+          <ion-back-button text="" defaultHref="/login">   </ion-back-button>
+          <h1>   Recordar contraseña</h1>
         </ion-buttons>
       </div>
 
       <p>Ingrese para continuar</p>
     </div>
 
-    <form class="login-form ion-padding">
+    <!-- formulario -->
+    <form #loginForm="ngForm" class="login-form ion-padding">
       <div class="form-input">
         <ion-icon name="mail-outline"></ion-icon>
         <ion-item>
           <ion-label position="floating">Correo</ion-label>
-          <ion-input type="email" aria-label="Correo"></ion-input>
+          <ion-input type="email" aria-label="Correo" name="email" ngModel></ion-input>
         </ion-item>
       </div>
       <br>
     </form>
 
-    <div class="action-button ion-padding">
-      <ion-button size="#" class="forgot-password-button" (click)="enviar()">Enviar</ion-button>
+    <div class="action-button ion-padding"> <!-- enviar correo -->
+      <ion-button size="#" class="forgot-password-button" (click)="enviar(loginForm)">Enviar</ion-button>
+      <img id="imagen-animada" src="./assets/mail.png" alt="mail" class="imagen-animada"> <!-- imagen animada -->
     </div>
   </div>
 </ion-content>

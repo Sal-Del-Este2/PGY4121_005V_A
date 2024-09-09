@@ -13,20 +13,21 @@ export class HomePage implements OnInit {
   popoverEvent: Event | undefined; // Guarda el evento del popover
 
   constructor(
-    private router: Router, // Inyecta Router
+    private router: Router,
     private animationCtrl: AnimationController,
     private popoverCtrl: PopoverController
-  ) {} // Inyecta PopoverController
+  ) {}
     
 
   ngOnInit() {
-    this.usuarioLogueado = localStorage.getItem('usuarioLogueado');
-    this.animateIcon();
+    this.usuarioLogueado = localStorage.getItem('usuarioLogueado'); // Recupera el usuario logueado desde localStorage
+    this.animateIcon(); // Inicia la animación
   }
 
   async presentPopover(event: Event) {
     this.popoverEvent = event;
     this.popoverOpen = true;
+    // Crea el popover y lo muestra
     const popover = await this.popoverCtrl.create({
       component: null, // No se necesita un componente
       event: this.popoverEvent,
@@ -36,6 +37,7 @@ export class HomePage implements OnInit {
     });
     await popover.present();
     
+    // Oculta el popover al presionar cerrar
     popover.onDidDismiss().then(() => {
       this.popoverOpen = false;
     });
@@ -57,6 +59,7 @@ export class HomePage implements OnInit {
     }
   }
 
+  // animacion del icono
   animateIcon() {
     const iconElement = document.querySelector('.bottom-icon');
 

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-recordar-cuenta',
@@ -8,12 +10,39 @@ import { Router } from '@angular/router';
 })
 export class RecordarCuentaPage {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private alertController: AlertController
+  ) {}
+  // Muestra una alerta al presionar el botón "Enviar"
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Correo Enviado',
+      subHeader: 'Siga la sinstrucciones del Mail enviado a su correo para poder recuperar su cuenta',
+      message: 'Puede cerrar esta ventana',
+      buttons: [{
+        text: 'Cerrar',
+        handler: () => {
+          this.animarImagen(); // Llama a la función para animar la imagen
+        }
+      }],
+    });
 
-  enviar() {
-    // Aquí puedes agregar la lógica para enviar el formulario o realizar alguna acción
+    await alert.present(); // Muestra la alerta en la pantalla
+  }  
+  // Agrega clase para animar la imagen cuando se presiona cerrar en el mensaje
+  animarImagen() {
+    const imagen = document.getElementById('imagen-animada');
+    if (imagen) {
+      imagen.classList.add('move-and-fade');
+    }
+  }
 
-    // Redirigir al login después de enviar
-    this.router.navigate(['/login']);
+  // Limpia el formulario después de enviar
+  enviar(loginForm: NgForm) {
+    if (loginForm) {
+      loginForm.reset(); // Limpia los campos del formulario
+    }
+    this.presentAlert(); // Muestra la alerta
   }
 }
