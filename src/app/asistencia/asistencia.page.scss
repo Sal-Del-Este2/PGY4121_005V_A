@@ -18,7 +18,8 @@ ion-content {
   }
   
   .heading {
-    margin-top: 20px;
+    margin-top: 5px;
+    text-align: center;
   }
   
   .heading h1 {
@@ -39,14 +40,16 @@ ion-content {
     justify-content: flex-end; /* Alinea los elementos en la parte inferior */
     align-items: center; /* Centra el ícono horizontalmente */
   }
+
   .icon-container {
     display: flex;
     justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
     width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-    padding: 130px; /* Espacio alrededor del ícono */
+    padding: 30px; /* Espacio alrededor del ícono */
   }
+
   .bottom-icon {
-    color: #fff;
+    color: #5f5f5f;
     font-size: 42px;
     width: 45px;
     height: 40px;

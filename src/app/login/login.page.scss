@@ -18,7 +18,8 @@ ion-content {
 }
 
 .heading {
-    margin-top: 20px;
+    margin-top: 2px;
+    text-align: center;
 }
 
 .heading h1 {
@@ -65,12 +66,18 @@ ion-content {
     color: #7b7b7b;
 }
 
+.custom-small-button {
+    height: 20px; /* altura del botón */
+    width: 90px; /* largo del boton*/
+    font-size: 12px; /* tamaño de la fuente */
+}
+
 .action-button {
     text-align: center;
 }
 
 .action-button .login-button {
-    background: #f9b801;
+    background: #f9b70100;
     width: 100%;
     font-weight: bold;
 }
@@ -88,3 +95,9 @@ ion-content {
     margin-top: 100%;
     width: 100%;
 }
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+  }

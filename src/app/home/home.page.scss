@@ -18,7 +18,8 @@ ion-content {
 }
 
 .heading {
-  margin-top: 20px;
+  margin-top: 5px;
+  text-align: center;
 }
 
 .heading h1 {
@@ -43,7 +44,8 @@ ion-content {
   display: flex;
   justify-content: center; /* Centra el ícono horizontalmente dentro del contenedor */
   width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-  padding: 130px; /* Espacio alrededor del ícono */
+  margin-top: 160px;
+  position: relative; /* Asegura que el menú flotante esté posicionado correctamente */
 }
 .bottom-icon {
   color: #fff;
@@ -69,4 +71,20 @@ ion-content {
   height: 50px; /* altura del botón */
   width: 30px; /* largo del boton*/
   font-size: 15px; /* tamaño de la fuente */
+}
+
+ion-popover {
+  --background: rgba(4, 69, 155, 0.445);
+  --backdrop-opacity: 0.6;
+  --box-shadow: 0 5px 10px 0 rgba(117, 116, 116, 0.6);
+  --color: white;
+  --width: 200px;
+}
+
+ion-popover ion-content {
+  --background: rgba(4, 69, 155, 0.445);
+}
+
+ion-popover::part(backdrop) {
+  background-color: rgba(79, 79, 80, 0.315);
 }

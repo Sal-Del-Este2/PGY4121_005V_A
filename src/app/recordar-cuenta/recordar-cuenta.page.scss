@@ -65,6 +65,12 @@ ion-content {
     color: #7b7b7b;
 }
 
+.custom-small-button {
+    height: 20px; /* altura del botón */
+    width: 90px; /* largo del boton*/
+    font-size: 12px; /* tamaño de la fuente */
+}
+
 .action-button {
     text-align: center;
 }

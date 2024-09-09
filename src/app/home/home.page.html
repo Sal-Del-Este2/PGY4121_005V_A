@@ -1,25 +1,39 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" id="main-content">
   <div class="icon-container">
-    <ion-icon name="person" class="bottom-icon" menuToggle></ion-icon>
+    <ion-icon name="person" class="bottom-icon" (click)="presentPopover($event)"></ion-icon>
   </div>
 
-    <div class="login-section ion-padding">
-      <div class="heading ion-padding">
-        <h1>Bienvenido a Duoc</h1>
-        <p *ngIf="usuarioLogueado">Estudiante: {{ usuarioLogueado }}</p> <!-- mostrar usuario iniciado -->
-      </div>
+  <ion-popover
+    [isOpen]="popoverOpen"
+    (ionPopoverDidDismiss)="popoverOpen = false"
+    [event]="popoverEvent"
+    
+  >
+    <ng-template>
+      <ion-content class="ion-padding">
+        <ion-list>
+          <!-- <ion-item button (click)="handleMenuAction('profile')">Perfil</ion-item> -->
+          <!-- <ion-item button (click)="handleMenuAction('settings')">Configuración</ion-item> -->
+          <ion-item button (click)="handleMenuAction('logout')">Cerrar sesión</ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
 
-      <!-- Contenedor para los botones alineados horizontalmente -->
-
-      <div class="action-button ion-padding">
-        <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Horario</ion-button> <!-- sitio en construcción -->
-        <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Asistencia</ion-button> <!-- sitio en construcción -->
-      </div>
-       
-      <div class="action-button ion-padding">
-        <ion-button size="#" class="custom-small-button" [routerLink]="'/asistencia'">Asistencia QR</ion-button>
-        <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Cursos</ion-button> <!-- sitio en construcción -->
-      </div>
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Bienvenido a Duoc</h1>
+      <p *ngIf="usuarioLogueado">Estudiante: {{ usuarioLogueado }}</p>
     </div>
 
+    <div class="action-button ion-padding">
+      <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Horario</ion-button>
+      <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Asistencia</ion-button>
+    </div>
+
+    <div class="action-button ion-padding">
+      <ion-button size="#" class="custom-small-button" [routerLink]="'/asistencia'">Asistencia QR</ion-button>
+      <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Cursos</ion-button>
+    </div>
+  </div>
 </ion-content>

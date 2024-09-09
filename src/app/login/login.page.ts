@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AnimationController } from '@ionic/angular'; // Importa AnimationController
 
 @Component({
   selector: 'app-login',
@@ -16,11 +17,39 @@ export class LoginPage {
 
   // Lista de usuarios válidos
   usuariosValidos = [
-    { correo: 'estudiante@duoc.cl', password: 'estudiante123' },
-    { correo: 'profesor@duoc.cl', password: 'profesor123' }
+    { correo: 'es@duoc.cl', password: 'es123' },
+    { correo: 'pr@duoc.cl', password: 'pr123' }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private animationCtrl: AnimationController) {} // Inyecta AnimationController
+
+  // Función para animar el botón
+  vibrateButton() {
+    const buttonElement = document.querySelector('.forgot-password-button');
+  
+    if (buttonElement) {
+      const animation = this.animationCtrl.create()
+        .addElement(buttonElement) // Solo si buttonElement no es null
+        .duration(2000) // Duración de la animación: 5 segundos
+        .keyframes([
+          { offset: 0, transform: 'translateX(0)' },
+          { offset: 0.1, transform: 'translateX(-5px)' },
+          { offset: 0.2, transform: 'translateX(5px)' },
+          { offset: 0.3, transform: 'translateX(-5px)' },
+          { offset: 0.4, transform: 'translateX(5px)' },
+          { offset: 0.5, transform: 'translateX(-5px)' },
+          { offset: 0.6, transform: 'translateX(5px)' },
+          { offset: 0.7, transform: 'translateX(-5px)' },
+          { offset: 0.8, transform: 'translateX(5px)' },
+          { offset: 0.9, transform: 'translateX(-5px)' },
+          { offset: 1, transform: 'translateX(0)' }
+        ]);
+  
+      animation.play(); // Inicia la animación
+    } else {
+      console.error('No se encontró el botón con la clase .login-button');
+    }
+  }
 
   login() {
     console.log('Correo ingresado:', this.user.correo); // Log para verificar el correo
@@ -40,6 +69,8 @@ export class LoginPage {
       // Autenticación fallida
       this.errorMessage = 'Usuario o contraseña incorrecta';
       console.log('Error en autenticación');
+
+      this.vibrateButton(); // Llama a la función de vibración si la autenticación falla
     }
-  }
+  } 
 }
