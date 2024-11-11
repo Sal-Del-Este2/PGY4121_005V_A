@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./construccion.page.scss'],
 })
 export class ConstruccionPage implements OnInit {
+  public pokemonImage: string | null = ''; // Declarar pokemonImage como propiedad de la clase
+
   ladrillos: any[] = [];
 
   constructor(private router: Router) {}
@@ -29,6 +31,10 @@ export class ConstruccionPage implements OnInit {
   }
 
   navigateHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/inicio']);
+  }
+
+  ionViewWillEnter() {
+    this.pokemonImage = localStorage.getItem('pokemonImage'); // Obtiene la imagen
   }
 }

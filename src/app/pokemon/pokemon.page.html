@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true" id="main-content">
+  <div class="icon-container">
+    <!-- <ion-icon name="person" class="bottom-icon" (click)="presentPopover($event)"></ion-icon> ícono para abrir el popover -->
+     <!-- <ion-icon name="person" class="bottom-icon"></ion-icon> -->
+  </div>
+  
+  <!-- inicio de sesión y botones de acción -->
+  <div class="home-section ion-padding">
+    <div class="heading ">
+    <h1>Selecciona a tu pokémon</h1>
+    <p>Selecciona tu pokémon por el "Nombre" o un "Número de ID"</p>
+  </div>
+
+  <!-- opciones -->
+  <div class="action-button ion-padding"> <!-- se emparejan los botones -->
+    <app-api-pokemon></app-api-pokemon>
+  </div>
+</div>

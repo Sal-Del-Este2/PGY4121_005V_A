@@ -80,7 +80,7 @@ ion-content {
 /* Estilo para el botón de enviar */
 .action-button .forgot-password-button {
     background: #f9b801;
-    width: 100%;
+    width: 60%;
     font-weight: bold;
 }
 
@@ -105,4 +105,7 @@ ion-content {
 .imagen-animada.move-and-fade {
     transform: translate(200px, -200px); /* Movimiento diagonal de la imagen */
     opacity: 0; /* Desvanecimiento */
+}
+.back-button {
+    color: #7b7b7b;
 }

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./asistencia.page.scss'],
 })
 export class AsistenciaPage implements OnInit {
+  public pokemonImage: string | null = ''; // Declarar pokemonImage como propiedad de la clase
 
   constructor(private router: Router) {}
 
@@ -14,18 +15,23 @@ export class AsistenciaPage implements OnInit {
     this.animateButtons();
   }
 
+  ionViewWillEnter() {
+    this.pokemonImage = localStorage.getItem('pokemonImage'); // Obtiene la imagen
+  }
+  
   animateButtons() {
     const buttons = document.querySelectorAll('.action-button ion-button');
     buttons.forEach((button, index) => {
-      (button as HTMLElement).style.setProperty('--animation-delay', `${index * 0.5}s`);
+      (button as HTMLElement).style.setProperty('--animation-delay', `${index * 0.2}s`);
     });
   }
 
-  navigateEscanner() {
-    this.router.navigate(['/escanner'])
+  navigateEscanner(clase: string) {
+    localStorage.setItem('claseSeleccionada', clase); // Guarda la clase seleccionada en localStorage
+    this.router.navigate(['/escanner']);
   }
 
   navigateHome() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/inicio']);
   }
 }

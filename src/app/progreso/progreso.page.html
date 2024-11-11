@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+  <ion-img class="imagen2" *ngIf="pokemonImage" [src]="pokemonImage"></ion-img>
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Progreso de Asistencias</h1>
+      
+    </div>
+
+    <!-- Contenedor para los botones alineados horizontalmente -->
+
+    <div class="action-button ion-padding">
+        <ion-card>
+    		<ion-card-header>
+      			<ion-card-title>  {{ claseSeleccionada }}</ion-card-title>
+    		</ion-card-header>
+    		<ion-card-content>
+      			<p>Llevas  {{ asistencias }} de asistencia.</p>
+      			<ion-progress-bar value="{{ asistencias / maxAsistencias }}"></ion-progress-bar>
+    		</ion-card-content>
+  	</ion-card>
+    </div>
+    
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="action-button ion-padding">
+    <ion-button size="#" class="custom-medium-button" (click)="navigateHome()">Volver a la página de Inicio</ion-button>
+  </div>
+</ion-footer>

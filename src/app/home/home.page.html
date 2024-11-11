@@ -1,43 +1,10 @@
-<ion-content [fullscreen]="true" id="main-content">
-  <div class="icon-container">
-    <ion-icon name="person" class="bottom-icon" (click)="presentPopover($event)"></ion-icon> <!-- ícono para abrir el popover -->
-  </div>
-
-  <!-- Popover para opciones adicionales -->
-  <ion-popover 
-    [isOpen]="popoverOpen"
-    (ionPopoverDidDismiss)="popoverOpen = false"
-    [event]="popoverEvent"
-    
-  >
-    <ng-template> 
-      <!-- comentarios de opciones que no se usaran -->
-      <ion-content class="ion-padding">
-        <ion-list>
-          <!-- <ion-item button (click)="handleMenuAction('profile')">Perfil</ion-item> -->
-          <!-- <ion-item button (click)="handleMenuAction('settings')">Configuración</ion-item> -->
-          <ion-item button (click)="handleMenuAction('logout')">Cerrar sesión</ion-item>
-        </ion-list>
-      </ion-content>
-    </ng-template>
-  </ion-popover>
-
-  <!-- inicio de sesión y botones de acción -->
-  <div class="home-section ion-padding">
+<ion-content [fullscreen]="true">
+  <div class="login-section ion-padding"> <!-- encabezado -->
     <div class="heading ion-padding">
       <h1>Bienvenido a Duoc</h1>
-      <p *ngIf="usuarioLogueado">Estudiante: {{ usuarioLogueado }}</p> <!-- mostrara el nombre de usuario iniciado -->
+      <p>Ingrese sus datos para continuar</p>
     </div>
-
-    <!-- opciones -->
-    <div class="action-button ion-padding"> <!-- se emparejan los botones -->
-      <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Horario</ion-button>
-      <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Asistencia</ion-button>
-    </div>
-
-    <div class="action-button ion-padding"> <!-- se emparejan los botones -->
-      <ion-button size="#" class="custom-small-button" [routerLink]="'/asistencia'">Asistencia QR</ion-button>
-      <ion-button size="#" class="custom-small-button" [routerLink]="'/construccion'">Cursos</ion-button>
-    </div>
+    <app-login></app-login> <!-- agregar el html del login -->
+    
   </div>
 </ion-content>

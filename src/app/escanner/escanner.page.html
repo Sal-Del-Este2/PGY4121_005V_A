@@ -1,25 +1,28 @@
 <ion-content [fullscreen]="true" id="main-content">
-
+  <ion-img class="imagen2" *ngIf="pokemonImage" [src]="pokemonImage"></ion-img>
   <div class="icon-container">
-    <br>
-  </div>
-  <br>
-  <div>
-    <ion-card>
-      <div class="barra"></div> <!-- Barra horizontal animada dentro del ion-card -->
-      <ion-card-header>
-        <ion-card-title></ion-card-title>
-        <ion-card-subtitle></ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-      </ion-card-content>
-    </ion-card>
-  </div>
-  <div class="ion-boton">
-    <ion-button (click)="presentAlert()">Escanear QR</ion-button> <!-- boton para mostrar alerta de escaneo de QR -->
-  </div>
-  <br>
-  <div class="icon-container">
-    <ion-icon name="play-back-outline" class="bottom-icon" (click)="navigateHome()"></ion-icon> <!--icono para regresa a asistencia -->
+    <div class="home-section ion-padding">
+      <div class="heading"></div>
+      <br>
+      <div>
+        <ion-card>
+          <div class="barra"></div> <!-- Barra horizontal animada dentro del ion-card -->
+          <ion-card-header>
+            <ion-card-title></ion-card-title>
+            <ion-card-subtitle></ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content></ion-card-content>
+        </ion-card>
+      </div>
+      <div class="ion-boton">
+        <ion-button (click)="presentAlert()">Escanear QR</ion-button> <!-- boton para mostrar alerta de escaneo de QR -->
+      </div>
+      <br>
+    </div>
   </div>
 </ion-content>
+<ion-footer>
+  <div class="action-button ion-padding">
+    <ion-button size="#" class="custom-medium-button" (click)="navigateHome()">Inicio</ion-button>
+  </div>
+</ion-footer>

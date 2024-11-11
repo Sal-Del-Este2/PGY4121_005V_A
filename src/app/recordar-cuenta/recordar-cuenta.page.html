@@ -1,14 +1,7 @@
 <ion-content [fullscreen]="true">
   <div class="login-section ion-padding">
     <div class="heading ion-padding">
-      <!-- Botón de regreso con ícono y texto -->
-      <div class="back-button">
-        <ion-buttons>
-          <ion-back-button text="" defaultHref="/login">   </ion-back-button>
-          <h1>   Recordar contraseña</h1>
-        </ion-buttons>
-      </div>
-
+      <h1>Recordar contraseña</h1>
       <p>Ingrese para continuar</p>
     </div>
 
@@ -23,10 +16,13 @@
       </div>
       <br>
     </form>
-
-    <div class="action-button ion-padding"> <!-- enviar correo -->
-      <ion-button size="#" class="forgot-password-button" (click)="enviar(loginForm)">Enviar</ion-button>
-      <img id="imagen-animada" src="./assets/mail.png" alt="mail" class="imagen-animada"> <!-- imagen animada -->
-    </div>
   </div>
 </ion-content>
+<ion-footer>
+  <div class="action-button" > <!-- enviar correo -->
+    <img id="imagen-animada" src="./assets/mail.png" alt="mail" class="imagen-animada"> <!-- imagen animada -->
+    <ion-button size="" width="50%" class="forgot-password-button" (click)="enviar(loginForm)">Enviar</ion-button>
+    <br>
+    <ion-button fill="clear" size="small" class="registro"  [routerLink]="'/home'">Regresar</ion-button>
+  </div>
+</ion-footer>
